@@ -1,5 +1,7 @@
 Spaceship one = new Spaceship();
+//Asteroid two = new Asteroid();
 Stars [] field;
+Asteroid [] belt;
 
 public void setup() 
 {
@@ -9,6 +11,11 @@ public void setup()
   {
   	field[i] = new Stars();
   }
+  belt = new Asteroid[10];
+  for (int i = 0; i <belt.length; i++)
+  {
+  	belt[i] = new Asteroid();
+  }
 }
 public void draw() 
 {
@@ -16,6 +23,11 @@ public void draw()
   for (int i = 0; i < field.length; i++)
   {
   	field[i].show();
+  }
+  for (int i = 0; i < belt.length; i++)
+  {
+  	belt[i].show();
+  	belt[i].move();
   }
   one.show();
   one.move();
