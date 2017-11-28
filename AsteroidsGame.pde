@@ -21,8 +21,8 @@ public void setup()
   	belt.add(new Asteroid());
   }
 
-  volley = new ArrayList<Bullet>();
-  for (int i = 0; i)
+  //volley = new ArrayList<Bullet>();
+ // for (int i = 0; i)
 }
 public void draw() 
 {
@@ -60,10 +60,10 @@ public void keyPressed()
 			one.setX((int)(Math.random()*500));
 			one.setY((int)(Math.random()*500));
 		}
-		if (keyCode == SPACE) 
+		/*if (keyCode == SPACE) 
 			{
 				volley.add(new Bullet(one));
 				bcount++; 
-			}
+			}*/
 	}
 }
