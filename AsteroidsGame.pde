@@ -40,7 +40,7 @@ public void draw()
   }
   for (int i = 0; i < volley.size(); i++)
   {
-  	if (dist(volley.get(i).getX(),volley.get(i).getY(),belt.get(i).getX(),belt.get(i).getY()) <= 20)
+  	if (dist(volley.get(i).getX(),volley.get(i).getY(),belt.get(i).getX(),belt.get(i).getY()) <= 10)
   		{
   			belt.remove(i);
   			volley.remove(i);
