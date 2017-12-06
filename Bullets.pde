@@ -18,12 +18,12 @@ class Bullet extends Floater
 		myPointDirection = one.getPointDirection();
 		double dRadians = myPointDirection*(Math.PI/180);
 		myDirectionX = 5*Math.cos(dRadians) + one.getDirectionX();
-		myDirectionY = 5*Math.cos(dRadians) + one.getDirectionY();
+		myDirectionY = 5*Math.sin(dRadians) + one.getDirectionY();
 	}
 	public void show()
 	{
 		noStroke();
 		fill(#ff8300);
-		ellipse((int)myCenterX,(int)myCenterY,5,5);
+		ellipse((int)myCenterX,(int)myCenterY,8,8);
 	}
 }

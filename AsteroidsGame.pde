@@ -2,9 +2,10 @@ Spaceship one = new Spaceship();
 //Asteroid two = new Asteroid();
 Stars [] field;
 //Asteroid [] belt;
-ArrayList<Asteroid> belt;
+ArrayList <Asteroid> belt;
 //Bullet shot = new Bullet(one);
-ArrayList<Bullet> volley;
+ArrayList <Bullet> volley;
+//int bcount = 0;
 
 public void setup() 
 {
@@ -15,14 +16,13 @@ public void setup()
   	field[i] = new Stars();
   }
   
-  belt = new ArrayList<Asteroid>();
+  belt = new ArrayList <Asteroid>();
   for (int i = 0; i <10; i++)
   {
   	belt.add(new Asteroid());
   }
 
-  //volley = new ArrayList<Bullet>();
- // for (int i = 0; i)
+  volley = new ArrayList <Bullet>();
 }
 public void draw() 
 {
@@ -37,6 +37,17 @@ public void draw()
   	belt.get(i).move();
   	if (dist(one.getX(),one.getY(),belt.get(i).getX(),belt.get(i).getY()) <= 10)
   		belt.remove(i);
+  }
+  for (int i = 0; i < volley.size(); i++)
+  {
+  	if (dist(volley.get(i).getX(),volley.get(i).getY(),belt.get(i).getX(),belt.get(i).getY()) <= 20)
+  		{
+  			belt.remove(i);
+  			volley.remove(i);
+  			break;
+  		}
+  	volley.get(i).show();
+  	volley.get(i).move();
   }
   one.show();
   one.move();
@@ -60,10 +71,10 @@ public void keyPressed()
 			one.setX((int)(Math.random()*500));
 			one.setY((int)(Math.random()*500));
 		}
-		/*if (keyCode == SPACE) 
+		if (keyCode == CONTROL) 
 			{
+				//bcount++; 
 				volley.add(new Bullet(one));
-				bcount++; 
-			}*/
+			}
 	}
 }
